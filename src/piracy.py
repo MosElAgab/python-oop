@@ -12,6 +12,12 @@ class Captain:
 
 class Ship:
     def __init__(self, draft, captain):
+        try:
+            captain.crew_size
+        except AttributeError:
+            raise TypeError('Invalid input')
+        if type(draft) is not int:
+            raise TypeError('Invalid input')
         self.draft = draft
         self.crew = captain.crew_size
     def worth_it(self):

@@ -12,7 +12,7 @@ def test_it_raises_DataType_error_when_invalid_datatype_is_passed_on():
     with pytest.raises(TypeError, match='Invalid input'):
         test_captain = Captain(1, '12,', 10, 'hahahahahah')
 
-# test Captain class arguments to onlt accepts the appropriate valuse
+# test Captain class arguments to onlt accepts the appropriate valuse/ ignored
     
 # test Captin holds the appropriate constructor attributes/properties 
 
@@ -30,6 +30,21 @@ def test_ship_class_holds_the_appropriate_attributes():
     test_ship = Ship(20, test_captain)
     assert test_ship.draft == 20
     assert test_ship.crew == 6
+
+# test ship accepts valid data types only 
+
+def test_ship_raises_DataType_error_when_invalid_datatype_is_passed_on():
+    with pytest.raises(TypeError, match='Invalid input'):
+        test_captain = Captain('Mostafa', 'Musty', 6, 'ohhh yeah!')
+        test_ship = Ship('20', test_captain)
+    with pytest.raises(TypeError, match='Invalid input'):
+        test_captain = Captain('Mostafa', 'Musty', 6, 'ohhh yeah!')
+        test_ship = Ship(20, {'crew_size': 40})
+    with pytest.raises(TypeError, match='Invalid input'):
+        test_captain = Captain('Mostafa', 'Musty', 6, 'ohhh yeah!')
+        test_ship = Ship(20, [])
+
+#  test ship worth_it method
 
 def test_ship_worth_it_method():
     test_captain = Captain('Mostafa', 'Musty', 6, 'ohhh yeah!')
