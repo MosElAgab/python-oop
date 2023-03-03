@@ -128,3 +128,43 @@ blinky.can_be_eaten # Should return True
 All of your class extensions still have access to the original methods in the Ghost Class and show the expected behaviour. Extensions are tested thoroughly.
 
 ---
+## 4. 🏴‍☠️ Piracy 🏴‍☠️
+### Captain Calss
+
+Each Captain class has the following properties:
+
+- `name`
+- `nickname`
+- `crew_size`
+- `catchphrase`
+
+```py
+david = Captain('David', 'General Bartlett', 10, 'I will not say arr')
+david.name # Would return 'David'
+david.nickname # Would return 'General Bartlett'
+david.crew_size # Would return 10
+david.catchphrase # Would return 'I will not say arr'
+```
+### Ship Calss
+
+Each Ship class has the following attributes:
+
+-   `draft` - an estimate of the ship's weight based on how low it is in the water.
+-   `captain`- Should be an instance of a Captain class.
+
+```py
+hms_boaty = Ship(20, david)
+hms_boaty.draft # Should return 20
+hms_boaty.crew # Should return the crew_size present on the Captain class
+```
+Also, each Ship class has the following method:
+
+-   `worth_it` method. This method should remove the weight of the crew from the draft. If the draft is more than 20 the method should return True, else return False. Each shipmate adds 1.5 units to the ship draft.
+
+```py
+hms_boaty.worth_it() # Should return False
+```
+
+---
+
+## 5. 📊 Vectors 📊
