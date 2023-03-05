@@ -46,23 +46,11 @@ pytest:
 	$(call execute_in_env, $(PIP) install pytest)
 
 # Run the flake8 code check
-# run-flake:
-# 	$(call execute_in_env, flake8 \
-# 	./src/multiplication_table/*.py \
-# 	./src/reduce_by_steps/*.py \
-# 	./src/find_partner/*.py \
-# 	./src/find_most_repeated/*.py \
-# 	./src/vowel_shift/*.py \
-# 	./src/alternating_split/*.py \
-# 	./src/crack_code/*.py \
-# 	./src/binary_search/*.py \
-# 	./src/calculate_binary_score/*.py \
-# 	./src/justify_line/*.py \
-# 	./src/find_the_needle/*.py \
-# 	./src/validate_suduko/*.py \
-# 	./src/strange_sort/*.py \
-# 	./src/gdpr_mask/*.py )
-	
+run-flake:
+	$(call execute_in_env, flake8 \
+	./src/coder.py \
+	./test/test_coder.py \
+	./src/build_a_ghost.py )	
 ## Run a single test
 unit-test:
 	$(call execute_in_env, PYTHONPATH=${PYTHONPATH} pytest -v ${test_run})
